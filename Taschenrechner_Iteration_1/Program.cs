@@ -14,15 +14,15 @@ namespace Taschenrechner_Iteration_1
         {
 
             // User Story "Addieren": Als Nutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
-            float zahl1;
-            float zahl2;
-            float ergebnis;
+            double zahl1;
+            double zahl2;
+            double ergebnis;
 
             // Eingabe der zahlen in Console und Umwandlung in Datentyp int, anschließendes speichern als Variablen
             Console.WriteLine("Erste Zahl eingeben:");
-            zahl1 = Convert.ToSingle(Console.ReadLine());
+            zahl1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("zweite Zahl eingeben:");
-            zahl2 = Convert.ToSingle(Console.ReadLine());
+            zahl2 = Convert.ToDouble(Console.ReadLine());
 
             //Ausgabe des Ergenisses
             ergebnis = zahl1 + zahl2;
