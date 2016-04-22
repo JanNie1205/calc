@@ -15,7 +15,7 @@ namespace Taschenrechner
             // User Story "Addieren": Als Nutzer möchte ich zwei Zahlen eingeben, um deren Summe berechnen zu lassen.
             // Eingabe der zahlen in Console anschließendes speichern als Variablen
             string zahl1AlsString = HoleEingabe("Erste zahl eingeben:");
-            string operation = HoleEingabe("Bitte gib die zu verwendende Operation an (+ oder -):");
+            string operation = HoleEingabe("Bitte gib die zu verwendende Operation an (+, -, *, /):");
             string zahl2AlsString = HoleEingabe("Zweite Zahl eingeben:");            
 
             //Konvertierung in Gleitkommazahl
