@@ -22,28 +22,45 @@ namespace Taschenrechner
             //TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
             double zahl1 = Convert.ToDouble(zahl1AlsString);
             double zahl2 = Convert.ToDouble(zahl2AlsString);
-            double ergebnis = 0;
 
             //Ergebnis berechnen
-            if(operation == "+")
-            {
-                 ergebnis = Addiere(zahl1, zahl2);
-            }
-            else if (operation == "-")
-            {
-                 ergebnis = Subtrahiere(zahl1, zahl2);
-            }
-            else
-            {
-                Console.WriteLine("Du hast eine ungültige Auswahl getroffen");
-            }
+            double ergebnis = Berechnung(operation, zahl1, zahl2);
 
             //Ausgabe des Ergebnisses
-            Console.WriteLine("Ergebnis: " + zahl1 + " " + operation + " " + zahl2 + " = " + ergebnis);
+            AusgabeErgebnis(ergebnis, operation, zahl1, zahl2);
             HoleEingabe("Zum Beenden bitte Enter Drücken.");
+
         }
 
+        static void AusgabeErgebnis(double ergebnis, string operation, double zahl1, double zahl2)
+        {
+            Console.WriteLine("Ergebnis: " + zahl1 + " " + operation + " " + zahl2 + " = " + ergebnis);
+        }
 
+        static double Berechnung (string operation, double zahl1, double zahl2)
+        {
+            double ergebnis = 0;
+            switch (operation)
+            {
+                case "+":
+                    ergebnis = Addiere(zahl1, zahl2);
+                    
+                    break;
+                case "-":
+                    ergebnis = Subtrahiere(zahl1, zahl2);
+                    break;
+                case "/":
+                    ergebnis = Dividiere(zahl1, zahl2);
+                    break;
+                case "*":
+                    ergebnis = Multipliziere(zahl1, zahl2);
+                    break;
+                default:
+                    Console.WriteLine("Du hast eine ungültige Auswahl getroffen");
+                    break;
+            }
+            return ergebnis;
+        }
 
         static string HoleEingabe(string ausgabeText)
         {
@@ -65,6 +82,27 @@ namespace Taschenrechner
             double ergebnis = zahl1 - zahl2;
 
             return ergebnis;
+        }
+
+        static double Multipliziere (double zahl1, double zahl2)
+        {
+            double ergebnis = zahl1 * zahl2;
+
+            return ergebnis;
+        }
+
+        static double Dividiere (double zahl1, double zahl2)
+        {
+            double ergebnis = 0;
+            if(zahl2 != 0) { 
+            ergebnis = zahl1 / zahl2;
+            }
+            else
+            {
+                Console.WriteLine("Division durch 0 ist nicht erlaubt.");
+            }
+            return ergebnis;
+
         }
     }
 }
