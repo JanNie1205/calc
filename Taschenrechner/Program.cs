@@ -27,14 +27,31 @@ namespace Taschenrechner
             double ergebnis = Berechnung(operation, zahl1, zahl2);
 
             //Ausgabe des Ergebnisses
-            AusgabeErgebnis(ergebnis, operation, zahl1, zahl2);
+            AusgabeErgebnis(ergebnis, operation);
             HoleEingabe("Zum Beenden bitte Enter Drücken.");
 
         }
 
-        static void AusgabeErgebnis(double ergebnis, string operation, double zahl1, double zahl2)
+        static void AusgabeErgebnis(double ergebnis, string operation)
         {
-            Console.WriteLine("Ergebnis: " + zahl1 + " " + operation + " " + zahl2 + " = " + ergebnis);
+            switch (operation)
+            {
+                case "+":
+                    Console.WriteLine("Die Summe lautet: " + ergebnis);
+                    break;
+                case "-":
+                    Console.WriteLine("Die Differenz lautet: " + ergebnis);
+                    break;
+                case "/":
+                    Console.WriteLine("Der Quotient lautet: " + ergebnis);
+                    break;
+                case "*":
+                    Console.WriteLine("Das Produkt lautet: " + ergebnis);
+                    break;
+                default:
+                    Console.WriteLine("Du hast eine ungültige Auswahl getroffen");
+                    break;
+            }
         }
 
         static double Berechnung (string operation, double zahl1, double zahl2)
